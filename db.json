@@ -1,0 +1,682 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "LG 24MP400-B 24 Full HD IPS Monitor",
+      "category": "Monitor",
+      "catId": "4",
+      "price": "8000",
+      "status": "In Stock",
+      "rating": "4",
+      "image_url": "/images/img1.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Resolution: HD (1366 x 768)",
+        "Display: TN, 60Hz, 5ms",
+        "Ports: VGA, HDMI",
+        "Features: Flicker Free, Eye Care"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "High-Resolution Walton Monitor",
+      "category": "Monitor",
+      "catId": "4",
+      "price": "7000",
+      "status": "In Stock",
+      "rating": "3.5",
+      "image_url": "/images/img2.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Resolution: HD (1266 x 668)",
+        "Display: TN, 50Hz, 5ms",
+        "Ports: HDMI",
+        "Features: Flicker Free, Eye Care"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Yah Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "HD DELL Monitor",
+      "category": "Monitor",
+      "catId": "4",
+      "price": "9000",
+      "status": "In Stock",
+      "rating": "5",
+      "image_url": "/images/img1.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Resolution: HD (1366 x 768)",
+        "Display: TN, 60Hz, 5ms",
+        "Ports: VGA, HDMI",
+        "Features: Flicker Free, Eye Care"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Powerful Quad-Core CPU",
+      "category": "CPU",
+      "catId": "1",
+      "price": "12000",
+      "status": "In Stock",
+      "rating": "5",
+      "image_url": "/images/img6.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Brand: YKM",
+        "Model: TN, 60H",
+        "Ports: VGA, HDMI",
+        "Features: Flicker Free, Eye Care"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "AMD Ryzen 3 4100 Processor",
+      "category": "CPU",
+      "catId": "1",
+      "price": "13000",
+      "status": "Out of stock",
+      "rating": "4.5",
+      "image_url": "/images/img5.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Brand: BBS",
+        "Model: R4508",
+        "Ports: VGA, HDMI",
+        "Features: Smarty"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Yah Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "AMD Ryzen 5 1600X Processor",
+      "category": "CPU",
+      "catId": "1",
+      "price": "13000",
+      "status": "In Stock",
+      "rating": "4.2",
+      "image_url": "/images/img6.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Brand: BBS",
+        "Model: R4508",
+        "Ports: VGA, HDMI",
+        "Features: Smarty"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "16GB DDR4 RAM",
+      "category": "RAM",
+      "catId": "3",
+      "price": "4000",
+      "status": "In Stock",
+      "rating": "4",
+      "image_url": "/images/img3.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Brand: BBS",
+        "Model: R4508",
+        "Ports: VGA, HDMI",
+        "Features: Smarty"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "8GB DDR4 RAM",
+      "category": "RAM",
+      "catId": "3",
+      "price": "3000",
+      "status": "In Stock",
+      "rating": "4.1",
+      "image_url": "/images/img3.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Brand: BBS",
+        "Model: R4508",
+        "Ports: VGA, HDMI",
+        "Features: Smarty"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "4GB DDR4 RAM",
+      "category": "RAM",
+      "catId": "3",
+      "price": "2500",
+      "status": "Out of stock",
+      "rating": "4.1",
+      "image_url": "/images/img3.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Brand: BBS",
+        "Model: R4508",
+        "Ports: VGA, HDMI",
+        "Features: Smarty"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "High-Performance Motherboard",
+      "category": "Motherboard",
+      "catId": "2",
+      "price": "9000",
+      "status": "Out of stock",
+      "rating": "4",
+      "image_url": "/images/img4.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Intel Socket 1150 for 4th Generation Core i7/i5/i3/Pentium/Celeron Processors",
+        "2 x DIMM, Max. 16GB, DDR3 Non-ECC, Un-buffered Memory",
+        "AI Suite 3-One-stop access to innovative ASUS features"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "High-Def Motherboard",
+      "category": "Motherboard",
+      "catId": "2",
+      "price": "8000",
+      "status": "In Stock",
+      "rating": "5",
+      "image_url": "/images/img7.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Intel Socket 1150 for 4th Generation Core i7/i5/i3/Pentium/Celeron Processors",
+        "2 x DIMM, Max. 16GB, DDR3 Non-ECC, Un-buffered Memory",
+        "AI Suite 3-One-stop access to innovative ASUS features"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "MD Motherboard",
+      "category": "Motherboard",
+      "catId": "2",
+      "price": "11000",
+      "status": "In Stock",
+      "rating": "3.5",
+      "image_url": "/images/img4.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Intel Socket 1150 for 4th Generation Core i7/i5/i3/Pentium/Celeron Processors",
+        "2 x DIMM, Max. 16GB, DDR3 Non-ECC, Un-buffered Memory",
+        "AI Suite 3-One-stop access to innovative ASUS features"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "850W 80+ Gold Power Supply",
+      "category": "Power Supply",
+      "catId": "5",
+      "price": "12000",
+      "status": "In Stock",
+      "rating": "5",
+      "image_url": "/images/img8.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Capacity: 450 Watt",
+        "Fan Size: 120mm",
+        "Form Factor: ATX"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Walton R8 Power Supply",
+      "category": "Power Supply",
+      "catId": "5",
+      "price": "9000",
+      "status": "In Stock",
+      "rating": "5",
+      "image_url": "/images/img9.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Capacity: 350 Watt",
+        "Fan Size: 100mm",
+        "Form Factor: ATX"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Supper N2 Power Supply",
+      "category": "Power Supply",
+      "catId": "5",
+      "price": "10000",
+      "status": "In Stock",
+      "rating": "3.5",
+      "image_url": "/images/img8.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Capacity: 450 Watt",
+        "Fan Size: 120mm",
+        "Form Factor: ATX"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Toshiba S300 1TB 5700rpm 3.5 Surveillance Hard Drive",
+      "category": "Storage Device",
+      "catId": "6",
+      "price": "7000",
+      "status": "In Stock",
+      "rating": "5",
+      "image_url": "/images/img10.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Storage: 1TB; RPM: 7200 rpm",
+        "Seek Time: 4.17ms, Buffer: 64MB",
+        "Interface: SATA 6Gb/s"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Sorif",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Seagate 2TB Portable External HDD",
+      "category": "Storage Device",
+      "catId": "6",
+      "price": "5000",
+      "status": "In Stock",
+      "rating": "4",
+      "image_url": "/images/img11.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Storage: 1TB; RPM: 7200 rpm",
+        "Seek Time: 4.17ms, Buffer: 64MB",
+        "Interface: SATA 6Gb/s"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Seagate Internal 1TB SATA Barracuda HDD",
+      "category": "Storage Device",
+      "catId": "6",
+      "price": "1000",
+      "status": "Out of stock",
+      "rating": "4.2",
+      "image_url": "/images/img11.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Storage: 1TB; RPM: 7200 rpm",
+        "Seek Time: 4.17ms, Buffer: 64MB",
+        "Interface: SATA 6Gb/s"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Asus RS200 ROG Strix Riser Cable",
+      "category": "Graphics Card",
+      "catId": "7",
+      "price": "18000",
+      "status": "In Stock",
+      "rating": 5,
+      "image_url": "/images/img12.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "OC mode: 1815MHz (Boost Clock)",
+        "Memory Interface: 64-bit",
+        "Interface: SATA 6Gb/s"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Rasel",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Antec T120 Chromatic CPU Air Cooler",
+      "category": "Cooling System",
+      "catId": "7",
+      "price": "6000",
+      "status": "In Stock",
+      "rating": 4,
+      "image_url": "/images/img13.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Fan Speed: 250~2000 RPM",
+        "4-Pin PWM Connection",
+        "Modular Locking Design"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Hasan",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "name": "ZADAK MOAB II Elite Water Cooled PC Case",
+      "category": "Case",
+      "catId": "7",
+      "price": "4000",
+      "status": "In Stock",
+      "rating": 3,
+      "image_url": "/images/img14.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Sync with Motherboard",
+        "Handy I/O Ports",
+        "Diamond Cut Design Front Panel"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Arif",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Forhad",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Meetion MT-K800 Colored Big Keys Kids Keyboard",
+      "category": "Keyboard",
+      "catId": "7",
+      "price": "3000",
+      "status": "In Stock",
+      "rating": 4,
+      "image_url": "/images/img15.jpg",
+      "description": "This is a sample product description. This is a sample product description. This is a sample product description.",
+      "key_features": [
+        "Model: MT-K800",
+        "Keys: 84 Keys Color Coded",
+        "Color: White"
+      ],
+      "reviews": [
+        {
+          "id": 1,
+          "user": "Araf",
+          "rating": 4,
+          "comment": "Great product!"
+        },
+        {
+          "id": 2,
+          "user": "Kamrul",
+          "rating": 5,
+          "comment": "Excellent quality."
+        }
+      ]
+    }
+  ],
+  "categories": [
+    { "id": "1", "name": "CPU" },
+    { "id": "2", "name": "Motherboard" },
+    { "id": "3", "name": "RAM" },
+    { "id": "4", "name": "Monitor" },
+    { "id": "5", "name": "Power Supply" },
+    { "id": "6", "name": "Storage Device" },
+    { "id": "7", "name": "Others" }
+  ]
+}
