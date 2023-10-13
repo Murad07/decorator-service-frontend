@@ -102,7 +102,8 @@ const RootLayout = ({ children }) => {
           {children}
         </Content>
         <Footer style={{ textAlign: "center" }}>
-          Decorator Service ©2023 Created by murad.pi22
+          <h3>Decorator Service ©2023 Created by murad.pi22 </h3>
+          <p>Lakhirchar, Keranigonj, Dhaka-1310</p>
         </Footer>
       </Layout>
     </>

@@ -1,10 +1,10 @@
 import ProductCard from "./ProductCard";
 import { Col, Row } from "antd";
 
-const FeaturedProducts = ({ allProducts }) => {
+const UpcomingServices = ({ allProducts }) => {
   return (
     <div>
-      <h1>Available Service</h1>
+      <h1>Upcoming Services</h1>
       <div className="blog-card-container">
         <Row gutter={[15, 15]}>
           {allProducts?.map((blog, index) => (
@@ -18,4 +18,4 @@ const FeaturedProducts = ({ allProducts }) => {
   );
 };
 
-export default FeaturedProducts;
+export default UpcomingServices;

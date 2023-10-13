@@ -1,15 +1,16 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import Banner from "@/components/UI/Banner";
 import FeaturedCategories from "@/components/UI/FeatureCategories";
-import FeaturedProducts from "@/components/UI/FeaturedProducts";
+import AvailableServices from "@/components/UI/AvailableServices";
+import UpcomingServices from "@/components/UI/UpcomingServices";
 // import fetch from "node-fetch";
 
 const HomePage = ({ allProducts, allCategories }) => {
   return (
     <RootLayout>
       <Banner />
-      <FeaturedProducts allProducts={allProducts} />
-      <FeaturedProducts allProducts={allProducts} />
+      <AvailableServices allProducts={allProducts} />
+      <UpcomingServices allProducts={allProducts} />
 
       <FeaturedCategories allCategories={allCategories} />
     </RootLayout>
