@@ -14,7 +14,6 @@ const Login = () => {
   const [login, { isLoading, isError }] = useLoginMutation();
 
   const handleLogin = async (email, password) => {
-    console.log("data: " + email, password);
     try {
       const response = await login({ email, password });
 
@@ -33,10 +32,7 @@ const Login = () => {
             localStorage.setItem("accessToken", accessToken);
           }
 
-          //   dispatch(loginSuccess({ user, token: accessToken }));
-
           route.push("/");
-          console.log("login successfull");
         } else {
           console.error("Login failed:", data.message);
         }
