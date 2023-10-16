@@ -142,9 +142,14 @@ const RootLayout = ({ children }) => {
                 Logout
               </Menu.Item>
             ) : (
-              <Menu.Item key="login">
-                <Link href="/auth/login">Login</Link>
-              </Menu.Item>
+              <>
+                <Menu.Item key="signup">
+                  <Link href="/auth/signup">Signup</Link>
+                </Menu.Item>
+                <Menu.Item key="login">
+                  <Link href="/auth/login">Login</Link>
+                </Menu.Item>
+              </>
             )}
           </Menu>
         </Sider>
