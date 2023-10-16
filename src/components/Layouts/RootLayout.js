@@ -3,8 +3,13 @@ import Head from "next/head";
 import { Button, Layout, Menu } from "antd";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
+import {
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+} from "@ant-design/icons";
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content, Footer, Sider } = Layout;
 
 const RootLayout = ({ children }) => {
   const { data: session } = useSession();
@@ -29,12 +34,21 @@ const RootLayout = ({ children }) => {
     { key: "7", label: "Others", link: "/categories/7" },
   ];
 
+  const isLogedIn =
+    typeof window !== "undefined" ? localStorage.getItem("accessToken") : false;
+  const handleLogout = () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("accessToken");
+      window.location.href = "/";
+    }
+  };
+
   return (
     <>
       <Head>
         <title>Decorator Service</title>
       </Head>
-      <Layout style={{ minHeight: "100vh" }}>
+      {/* <Layout style={{ minHeight: "100vh" }}>
         <Header
           style={{
             display: "flex",
@@ -105,6 +119,60 @@ const RootLayout = ({ children }) => {
           <h3>Decorator Service ©2023 Created by murad.pi22 </h3>
           <p>Lakhirchar, Keranigonj, Dhaka-1310</p>
         </Footer>
+      </Layout> */}
+
+      <Layout>
+        <Sider
+          breakpoint="lg"
+          collapsedWidth="0"
+          onBreakpoint={(broken) => {
+            console.log(broken);
+          }}
+          onCollapse={(collapsed, type) => {
+            console.log(collapsed, type);
+          }}
+        >
+          <div className="demo-logo-vertical" />
+          <Menu theme="dark" mode="vertical">
+            <Menu.Item key="dashboard">
+              <Link href="/dashboard">Dashboard</Link>
+            </Menu.Item>
+            {isLogedIn ? (
+              <Menu.Item key="logout" onClick={handleLogout}>
+                Logout
+              </Menu.Item>
+            ) : (
+              <Menu.Item key="login">
+                <Link href="/auth/login">Login</Link>
+              </Menu.Item>
+            )}
+          </Menu>
+        </Sider>
+        <Layout>
+          <Header
+            style={{
+              padding: 0,
+              // background: colorBgContainer,
+              color: "white",
+            }}
+          >
+            <div style={{ marginLeft: 10 }}>Decorator Service</div>
+          </Header>
+          <Content
+            style={{
+              margin: "24px 16px",
+              padding: 24,
+              background: "#fff",
+              flex: "1 0 auto",
+            }}
+          >
+            {children}
+          </Content>
+          <Footer style={{ textAlign: "center" }}>
+            <h3>Decorator Service ©2023 Created by murad.pi22 </h3>
+            <p>Lakhirchar, Keranigonj, Dhaka-1310</p>
+          </Footer>
+        </Layout>
       </Layout>
     </>
   );
