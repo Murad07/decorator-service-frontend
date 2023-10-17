@@ -9,8 +9,8 @@ const HomePage = ({ allProducts, allCategories }) => {
   return (
     <RootLayout>
       <Banner />
-      {/* <AvailableServices allProducts={allProducts} />
-      <UpcomingServices allProducts={allProducts} />
+      <AvailableServices />
+      {/*<UpcomingServices allProducts={allProducts} />
 
       <FeaturedCategories allCategories={allCategories} /> */}
     </RootLayout>
