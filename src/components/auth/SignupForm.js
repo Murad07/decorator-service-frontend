@@ -1,10 +1,33 @@
 import React from "react";
 import { Form, Input, Button } from "antd";
+import { useSignupMutation } from "@/redux/api/api";
 
 const SignupForm = () => {
-  const onFinish = (values) => {
-    // Handle form submission, e.g., make an API request to create a new user
+  const [signup, { isLoading, isError }] = useSignupMutation();
+
+  const onFinish = async (values) => {
     console.log("Received values:", values);
+
+    try {
+      const response = await signup(values);
+
+      if (isError) {
+        console.error("Signup error:", isError);
+        return;
+      }
+
+      if (response.data) {
+        const { data } = response;
+
+        if (data.success) {
+          route.push("/");
+        } else {
+          console.error("signup failed:", data.message);
+        }
+      }
+    } catch (error) {
+      console.error("An error occurred during signup:", error);
+    }
   };
 
   return (
