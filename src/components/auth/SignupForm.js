@@ -1,9 +1,11 @@
 import React from "react";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, message } from "antd";
 import { useSignupMutation } from "@/redux/api/api";
+import { useRouter } from "next/router";
 
 const SignupForm = () => {
   const [signup, { isLoading, isError }] = useSignupMutation();
+  const route = useRouter();
 
   const onFinish = async (values) => {
     console.log("Received values:", values);
@@ -20,7 +22,8 @@ const SignupForm = () => {
         const { data } = response;
 
         if (data.success) {
-          route.push("/");
+          message.success("Signup successful!");
+          route.push("/auth/login");
         } else {
           console.error("signup failed:", data.message);
         }
