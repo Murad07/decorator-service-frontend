@@ -1,4 +1,4 @@
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, message } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import { useForm } from "react-hook-form";
 import { useLoginMutation } from "@/redux/api/api";
@@ -13,42 +13,42 @@ const Login = () => {
 
   const [login, { isLoading, isError }] = useLoginMutation();
 
-  const handleLogin = async (email, password) => {
+  const handleLogin = async () => {
     try {
-      const response = await login({ email, password });
+      const { data, error } = await login({ email, password });
 
-      if (isError) {
-        console.error("Login error:", isError);
+      if (error) {
+        message.error("Something Wrong!");
+        console.error("Login error:", error);
         return;
       }
 
-      if (response.data) {
-        const { data } = response;
+      if (data.success) {
+        message.success("Login successful!");
+        const accessToken = data.data.accessToken;
 
-        if (data.success) {
-          const accessToken = data.data.accessToken;
-
-          if (accessToken) {
-            localStorage.setItem("accessToken", accessToken);
-          }
-
-          route.push("/");
-        } else {
-          console.error("Login failed:", data.message);
+        if (accessToken) {
+          localStorage.setItem("accessToken", accessToken);
         }
+
+        route.push("/");
+      } else {
+        message.error("Login failed:", data.message);
+        console.error("Login failed:", data.message);
       }
     } catch (error) {
       console.error("An error occurred during login:", error);
+      message.error("An error occurred during login");
     }
   };
 
-  const onSubmit = (data) => {
-    // Handle form submission here (data.username and data.password)
-    handleLogin(email, password);
-  };
+  // const onSubmit = (data) => {
+  //   // Handle form submission here (data.username and data.password)
+  //   handleLogin(email, password);
+  // };
 
   return (
-    <Form onFinish={handleSubmit(onSubmit)}>
+    <Form onFinish={handleLogin}>
       <Form.Item
         name="email" // Make sure the name matches the form data structure
         rules={[

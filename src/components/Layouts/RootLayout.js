@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { Button, Layout, Menu } from "antd";
+import { Button, Layout, Menu, message } from "antd";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import {
@@ -14,31 +14,13 @@ const { Header, Content, Footer, Sider } = Layout;
 const RootLayout = ({ children }) => {
   const { data: session } = useSession();
 
-  const menuItems = [
-    { key: "1", label: "Home", link: "/" },
-    { key: "2", label: "Categories", link: "/two", subMenu: true },
-    { key: "3", label: "Decorator Service", link: "/pcBuilder" },
-  ];
-
-  const categorySubItems = [
-    { key: "1", label: "CPU / Processor", link: "/categories/1" },
-    { key: "2", label: "Motherboard", link: "/categories/2" },
-    { key: "3", label: "RAM", link: "/categories/3" },
-    {
-      key: "4",
-      label: "Power Supply Unit",
-      link: "/categories/5",
-    },
-    { key: "5", label: "Storage Device", link: "/categories/6" },
-    { key: "6", label: "Monitor", link: "/categories/4" },
-    { key: "7", label: "Others", link: "/categories/7" },
-  ];
-
   const isLogedIn =
     typeof window !== "undefined" ? localStorage.getItem("accessToken") : false;
+
   const handleLogout = () => {
     if (typeof window !== "undefined") {
       localStorage.removeItem("accessToken");
+      message.success("Logout successful!");
       window.location.href = "/";
     }
   };
