@@ -2,8 +2,12 @@ import React from "react";
 import { Spin, Card, Descriptions } from "antd";
 import { useGetUserProfileQuery } from "@/redux/api/api";
 import RootLayout from "@/components/Layouts/RootLayout";
+import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { setUserInfo } from "@/redux/features/userSlice";
 
 const UserProfile = () => {
+  const dispatch = useDispatch();
   const { data, isLoading, isError } = useGetUserProfileQuery();
 
   if (isLoading) {
@@ -25,6 +29,8 @@ const UserProfile = () => {
     return <div>Error loading profile information.</div>;
   }
 
+  dispatch(setUserInfo(data.data));
+
   return (
     <RootLayout>
       <div
@@ -40,6 +46,8 @@ const UserProfile = () => {
             </Descriptions.Item>
             {/* Add more profile fields as needed */}
           </Descriptions>
+
+          <Link href="/editProfile">Edit Profile</Link>
         </Card>
       </div>
     </RootLayout>

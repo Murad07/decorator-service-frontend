@@ -40,6 +40,13 @@ export const apiSlice = createApi({
     getUserProfile: builder.query({
       query: () => "/profile",
     }),
+    updateUser: builder.mutation({
+      query: ({ userId, ...updateData }) => ({
+        url: `users/6527b90a7bcba07dd47ab553`, // Include the user's ID in the URL
+        method: "PATCH", // You may need to change this to the appropriate HTTP method
+        body: updateData,
+      }),
+    }),
   }),
 });
 
@@ -49,4 +56,5 @@ export const {
   useLoginMutation,
   useSignupMutation,
   useGetUserProfileQuery,
+  useUpdateUserMutation,
 } = apiSlice;
