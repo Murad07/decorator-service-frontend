@@ -11,6 +11,14 @@ const ProductCard = ({
   location,
   serviceImage,
 }) => {
+  const imageStyle = {
+    height: "200px", // Set your desired fixed height here
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+  };
+
   return (
     <Link href={`/products/${id}`}>
       <Card
@@ -19,9 +27,16 @@ const ProductCard = ({
           padding: 10,
           height: 500,
         }}
-        cover={<Image src={serviceImage} alt={title} height={300} />}
-        //
+        // cover={<Image src={serviceImage} alt={title} height={300} />}
       >
+        <div style={imageStyle}>
+          <Image
+            alt={title}
+            src={serviceImage}
+            preview={false}
+            style={{ objectFit: "cover", width: "100%", height: "100%" }}
+          />
+        </div>
         <Meta title={title} description="" />
         <p>Category: {category}</p>
         <p>Price: {price}</p>
