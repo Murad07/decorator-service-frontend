@@ -6,6 +6,15 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     // baseUrl: "https://l2a6-pc-builder-murad07.vercel.app/",
     baseUrl: "http://localhost:5000/api/v1",
+    prepareHeaders: (headers, { getState }) => {
+      const token = localStorage.getItem("accessToken");
+
+      if (token) {
+        headers.set("authorization", token);
+      }
+
+      return headers;
+    },
   }),
   endpoints: (builder) => ({
     getAvailableServices: builder.query({
@@ -28,6 +37,9 @@ export const apiSlice = createApi({
         body: userData,
       }),
     }),
+    getUserProfile: builder.query({
+      query: () => "/profile",
+    }),
   }),
 });
 
@@ -36,4 +48,5 @@ export const {
   useGetUpcomingServicesQuery,
   useLoginMutation,
   useSignupMutation,
+  useGetUserProfileQuery,
 } = apiSlice;
