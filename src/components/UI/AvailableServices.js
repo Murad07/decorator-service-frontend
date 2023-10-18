@@ -22,6 +22,8 @@
 
 import { useGetServicesQuery } from "@/redux/api/api";
 import React from "react";
+import ProductCard from "./ProductCard";
+import { Col, Row } from "antd";
 
 const AvailableService = () => {
   const { data, error, isLoading } = useGetServicesQuery();
@@ -39,11 +41,20 @@ const AvailableService = () => {
   return (
     <div>
       <h2>Available Services</h2>
-      <ul>
+      {/* <ul>
         {data.data?.map((service) => (
           <li key={service.id}>{service.title}</li>
         ))}
-      </ul>
+      </ul> */}
+      <div className="blog-card-container">
+        <Row gutter={[15, 15]}>
+          {data.data?.map((blog, index) => (
+            <Col xs={24} sm={6} key={index} span={6}>
+              <ProductCard key={index} {...blog} />
+            </Col>
+          ))}
+        </Row>
+      </div>
     </div>
   );
 };

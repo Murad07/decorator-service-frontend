@@ -1,16 +1,15 @@
-import Image from "next/image";
-import { Card, Rate } from "antd";
+// import Image from "next/image";
+import { Card, Rate, Image } from "antd";
 import Link from "next/link";
 const { Meta } = Card;
 
 const ProductCard = ({
   id,
-  name,
-  image_url,
-  category,
+  title,
   price,
-  status,
-  rating,
+  category,
+  location,
+  serviceImage,
 }) => {
   return (
     <Link href={`/products/${id}`}>
@@ -20,13 +19,12 @@ const ProductCard = ({
           padding: 10,
           height: 500,
         }}
-        cover={<Image src={image_url} alt={name} width={100} height={300} />}
+        cover={<Image src={serviceImage} alt={title} height={300} />}
         //
       >
-        <Meta title={name} description="" />
+        <Meta title={title} description="" />
         <p>Category: {category}</p>
         <p>Price: {price}</p>
-        <p>Status: {status}</p>
         {/* Rating: <Rate disabled defaultValue={rating} /> */}
       </Card>
     </Link>
