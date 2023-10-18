@@ -117,12 +117,17 @@ const RootLayout = ({ children }) => {
           <div className="demo-logo-vertical" />
           <Menu theme="dark" mode="vertical">
             <Menu.Item key="dashboard">
-              <Link href="/dashboard">Dashboard</Link>
+              <Link href="/">Heme</Link>
             </Menu.Item>
             {isLogedIn ? (
-              <Menu.Item key="logout" onClick={handleLogout}>
-                Logout
-              </Menu.Item>
+              <>
+                <Menu.Item key="profile">
+                  <Link href="/profile">Profile</Link>
+                </Menu.Item>
+                <Menu.Item key="logout" onClick={handleLogout}>
+                  Logout
+                </Menu.Item>
+              </>
             ) : (
               <>
                 <Menu.Item key="signup">
