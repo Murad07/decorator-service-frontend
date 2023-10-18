@@ -8,8 +8,11 @@ export const apiSlice = createApi({
     baseUrl: "http://localhost:5000/api/v1",
   }),
   endpoints: (builder) => ({
-    getServices: builder.query({
-      query: () => "/service",
+    getAvailableServices: builder.query({
+      query: () => "/service?serviceStatus=Available",
+    }),
+    getUpcomingServices: builder.query({
+      query: () => "/service?serviceStatus=Upcoming",
     }),
     login: builder.mutation({
       query: (credentials) => ({
@@ -28,5 +31,9 @@ export const apiSlice = createApi({
   }),
 });
 
-export const { useGetServicesQuery, useLoginMutation, useSignupMutation } =
-  apiSlice;
+export const {
+  useGetAvailableServicesQuery,
+  useGetUpcomingServicesQuery,
+  useLoginMutation,
+  useSignupMutation,
+} = apiSlice;

@@ -20,16 +20,27 @@
 
 // export default AvailableServices;
 
-import { useGetServicesQuery } from "@/redux/api/api";
+import { useGetAvailableServicesQuery } from "@/redux/api/api";
 import React from "react";
 import ProductCard from "./ProductCard";
-import { Col, Row } from "antd";
+import { Col, Row, Spin } from "antd";
 
 const AvailableService = () => {
-  const { data, error, isLoading } = useGetServicesQuery();
+  const { data, error, isLoading } = useGetAvailableServicesQuery();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "30px",
+        }}
+      >
+        <Spin size="large" />
+      </div>
+    );
   }
 
   if (error) {

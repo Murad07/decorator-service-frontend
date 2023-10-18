@@ -10,9 +10,9 @@ const HomePage = ({ allProducts, allCategories }) => {
     <RootLayout>
       <Banner />
       <AvailableServices />
-      {/*<UpcomingServices allProducts={allProducts} />
+      <UpcomingServices />
 
-      <FeaturedCategories allCategories={allCategories} /> */}
+      {/*<FeaturedCategories allCategories={allCategories} /> */}
     </RootLayout>
   );
 };

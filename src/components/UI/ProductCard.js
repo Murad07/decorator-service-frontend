@@ -25,7 +25,7 @@ const ProductCard = ({
         hoverable
         style={{
           padding: 10,
-          height: 500,
+          height: 400,
         }}
         // cover={<Image src={serviceImage} alt={title} height={300} />}
       >
