@@ -8,6 +8,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
+import CartButton from "../UI/CartButton";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -143,12 +144,15 @@ const RootLayout = ({ children }) => {
         <Layout>
           <Header
             style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
               padding: 0,
-              // background: colorBgContainer,
               color: "white",
             }}
           >
             <div style={{ marginLeft: 10 }}>Decorator Service</div>
+            <CartButton />
           </Header>
           <Content
             style={{
