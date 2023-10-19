@@ -1,18 +1,14 @@
-import { Card, Col, Rate, Row, Image } from "antd";
+import { Col, Rate, Row, Image } from "antd";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { useRouter } from "next/router";
 import { useGetReviewQuery, useGetSingleServiceQuery } from "@/redux/api/api";
 
-const ProductDetails = ({ product }) => {
+const ProductDetails = () => {
   const router = useRouter();
   const { productId } = router.query;
 
-  const { data, isLoading, isError } = useGetSingleServiceQuery(productId);
-  const {
-    data: review,
-    isLoading: reviewLoading,
-    isError: reviewError,
-  } = useGetReviewQuery(productId);
+  const { data } = useGetSingleServiceQuery(productId);
+  const { data: review } = useGetReviewQuery(productId);
   console.log("p: " + review?.data);
   return (
     <RootLayout>
@@ -60,26 +56,3 @@ const ProductDetails = ({ product }) => {
 };
 
 export default ProductDetails;
-
-export const getServerSideProps = async (context) => {
-  // if (typeof window === "undefined") {
-  //   return {
-  //     props: {
-  //       product: [],
-  //     },
-  //   };
-  // }
-
-  const { params } = context;
-  const res = await fetch(
-    `${process.env.URL}/products?pId=${params.productId}`
-  );
-  const data = await res.json();
-  console.log(data.data);
-
-  return {
-    props: {
-      product: data.data,
-    },
-  };
-};
