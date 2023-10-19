@@ -5,7 +5,12 @@ This is a Next Js Decorator Service Project.
 ## Features
 
 - Home, Hero Banner, Navbar and Footer.
--
+- User Signup & Signin.
+- Show Our available service and upcomming service
+- Service add to cart
+- Show Service Details on click service
+- Make a Review and rating for service
+- Show review and rating.
 
 ## Deploy on Vercel
 
