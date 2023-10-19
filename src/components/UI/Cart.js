@@ -1,15 +1,19 @@
 // Cart.js
 import React from "react";
-import { Modal, List, Button } from "antd";
+import { Modal, List, Button, Row, Col, Form } from "antd";
 import { useDispatch } from "react-redux";
 import { removeFromCart } from "@/redux/features/cartSlice";
 
 const Cart = ({ visible, cartItems, onClose }) => {
+  const [form] = Form.useForm();
   const dispatch = useDispatch();
 
   const handleRemoveFromCart = (item) => {
-    // Dispatch the removeFromCart action with the item to remove from the cart
     dispatch(removeFromCart(item));
+  };
+
+  const onFinish = (values) => {
+    console.log("Selected items:", cartItems);
   };
 
   return (
@@ -23,17 +27,46 @@ const Cart = ({ visible, cartItems, onClose }) => {
         </Button>,
       ]}
     >
-      <List
+      {/* <List
         dataSource={cartItems}
         renderItem={(item) => (
-          <List.Item>
-            {item.title} - ${item.price}
-            <Button onClick={() => handleRemoveFromCart(item)}>
-              Remove from Cart
-            </Button>
+          <List.Item
+            style={{ display: "flex", justifyContent: "space-between" }}
+          >
+            <div>
+              {item.title} - ${item.price}
+            </div>
+            <div>
+              <Button onClick={() => handleRemoveFromCart(item)}>Remove</Button>
+            </div>
           </List.Item>
         )}
-      />
+      /> */}
+      <Form form={form} onFinish={onFinish}>
+        <List
+          dataSource={cartItems}
+          renderItem={(item) => (
+            <List.Item
+              style={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <div>
+                {item.title} - ${item.price}
+              </div>
+              <div>
+                <Button onClick={() => handleRemoveFromCart(item)}>
+                  Remove
+                </Button>
+              </div>
+            </List.Item>
+          )}
+        />
+
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Book Now
+          </Button>
+        </Form.Item>
+      </Form>
     </Modal>
   );
 };
