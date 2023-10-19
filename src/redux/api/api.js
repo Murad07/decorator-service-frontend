@@ -4,8 +4,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
   reducerPath: "apiSlice",
   baseQuery: fetchBaseQuery({
-    // baseUrl: "https://l2a6-pc-builder-murad07.vercel.app/",
-    baseUrl: "http://localhost:5000/api/v1",
+    baseUrl: "https://l2-a5-book-catalog-backend-murad07.vercel.app/api/v1",
+    // baseUrl: "http://localhost:5000/api/v1",
     prepareHeaders: (headers, { getState }) => {
       const token = localStorage.getItem("accessToken");
 
