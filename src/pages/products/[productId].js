@@ -1,31 +1,95 @@
-import { Col, Rate, Row, Image } from "antd";
+import { Col, Rate, Row, Image, Spin, Form, Button, Input } from "antd";
 import RootLayout from "@/components/Layouts/RootLayout";
 import { useRouter } from "next/router";
-import { useGetReviewQuery, useGetSingleServiceQuery } from "@/redux/api/api";
+import {
+  useAddReviewMutation,
+  useGetReviewQuery,
+  useGetSingleServiceQuery,
+} from "@/redux/api/api";
+import { useState } from "react";
 
 const ProductDetails = () => {
   const router = useRouter();
   const { productId } = router.query;
 
-  const { data } = useGetSingleServiceQuery(productId);
-  const { data: review } = useGetReviewQuery(productId);
-  console.log("p: " + review?.data);
+  const {
+    data: serviceData,
+    isLoading: serviceIsLoading,
+    isError: serviceIsError,
+  } = useGetSingleServiceQuery(productId);
+  const {
+    data: reviewData,
+    isLoading: reviewIsLoading,
+    isError: reviewIsError,
+  } = useGetReviewQuery(productId);
+
+  const [form] = Form.useForm();
+
+  const [submitting, setSubmitting] = useState(false);
+  const [reviewText, setReviewText] = useState("");
+  const [rating, setRating] = useState(0);
+
+  const [addReview] = useAddReviewMutation();
+
+  const handleReviewSubmit = async () => {
+    try {
+      const values = await form.validateFields();
+      setSubmitting(true);
+
+      const newReview = {
+        decoratorService: productId,
+        reviewText: values.comment,
+        rating: values.rating,
+      };
+
+      await addReview(newReview);
+      setReviewText("");
+      setRating(0);
+      form.resetFields();
+    } catch (error) {
+      console.error("Error submitting review:", error);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+  if (serviceIsLoading || reviewIsLoading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "30px",
+        }}
+      >
+        <Spin size="large" />
+      </div>
+    );
+  }
+
+  if (serviceIsError || reviewIsError) {
+    return <div>Error loading data.</div>;
+  }
+
+  const productDetails = serviceData?.data;
+  const productReviews = reviewData?.data;
+
   return (
     <RootLayout>
       <div style={{ padding: 20 }} className="blog-card-container">
         <Row gutter={[15, 15]}>
           <Col xs={24} sm={12} span={12}>
-            <h1>{data?.data?.title}</h1>
-            <p>Category: {data?.data?.category}</p>
-            <p>Status: {data?.data?.serviceStatus}</p>
-            <p>Price: {data?.data?.price}</p>
+            <h1>{productDetails?.title}</h1>
+            <p>Category: {productDetails?.category}</p>
+            <p>Status: {productDetails?.serviceStatus}</p>
+            <p>Price: {productDetails?.price}</p>
             {/* <p>Individual Rating: {product.rating.individual}</p> */}
             {/* Average Rating: <Rate disabled defaultValue={data.data?.rating} /> */}
           </Col>
           <Col xs={24} sm={12} span={12}>
             <Image
-              src={data?.data?.serviceImage}
-              alt={data?.data?.title}
+              src={productDetails?.serviceImage}
+              alt={productDetails?.title}
               width={250}
               height={300}
             />
@@ -33,8 +97,34 @@ const ProductDetails = () => {
         </Row>
 
         <div>
+          <h3>Submit Review</h3>
+          <Form form={form} onFinish={handleReviewSubmit}>
+            <Form.Item
+              name="comment"
+              rules={[{ required: true, message: "Please enter your review." }]}
+            >
+              <Input.TextArea
+                rows={4}
+                value={reviewText}
+                onChange={(e) => setReviewText(e.target.value)}
+                placeholder="Write your review here"
+              />
+            </Form.Item>
+            <Form.Item
+              name="rating"
+              rules={[{ required: true, message: "Please select a rating." }]}
+            >
+              <Rate value={rating} onChange={(value) => setRating(value)} />
+            </Form.Item>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" loading={submitting}>
+                Submit Review
+              </Button>
+            </Form.Item>
+          </Form>
+
           <h3>Reviews</h3>
-          {review?.data?.map((review) => (
+          {productReviews?.map((review) => (
             <div
               key={review.id}
               style={{

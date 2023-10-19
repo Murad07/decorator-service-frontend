@@ -53,6 +53,13 @@ export const apiSlice = createApi({
         body: updateData,
       }),
     }),
+    addReview: builder.mutation({
+      query: (reviewData) => ({
+        url: `/reviews`,
+        method: "POST",
+        body: reviewData,
+      }),
+    }),
   }),
 });
 
@@ -65,4 +72,5 @@ export const {
   useSignupMutation,
   useGetUserProfileQuery,
   useUpdateUserMutation,
+  useAddReviewMutation,
 } = apiSlice;
