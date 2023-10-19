@@ -1,4 +1,3 @@
-// pages/EditProfile.js
 import React, { useState } from "react";
 import { Form, Input, Button, Card, message } from "antd";
 import RootLayout from "@/components/Layouts/RootLayout";
@@ -18,17 +17,10 @@ const EditProfile = () => {
 
   const handleSave = async (values) => {
     setIsSubmitting(true);
-    console.log("Received values:", values);
-    const userId = values._id;
-    const userData = {
-      role: values.role,
-      name: values.name,
-      email: values.email,
-      phone: values.phone,
-    };
 
     try {
-      const response = await updateUser({ userId, ...userData });
+      const response = await updateUser(values);
+      console.log("uid: " + values._id);
 
       if (isError) {
         console.error("Update error:", isError);
@@ -52,7 +44,6 @@ const EditProfile = () => {
   };
 
   if (userInfo) {
-    console.log(userInfo);
     return (
       <RootLayout>
         <div
@@ -88,15 +79,9 @@ const EditProfile = () => {
               >
                 <Input />
               </Form.Item>
-              {/* <Form.Item
-                label="Address"
-                name="address"
-                rules={[
-                  { required: true, message: "Please enter your address" },
-                ]}
-              >
+              <Form.Item label="id" name="_id" style={{ display: "none" }}>
                 <Input />
-              </Form.Item> */}
+              </Form.Item>
               <Form.Item>
                 <Button type="primary" htmlType="submit" loading={isSubmitting}>
                   Save

@@ -3,12 +3,15 @@ import { Spin, Card, Descriptions } from "antd";
 import { useGetUserProfileQuery } from "@/redux/api/api";
 import RootLayout from "@/components/Layouts/RootLayout";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
-import { setUserInfo } from "@/redux/features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUserInfo, setUserInfo } from "@/redux/features/userSlice";
+import { useState } from "react";
 
 const UserProfile = () => {
   const dispatch = useDispatch();
+  const userInfo = useSelector(selectUserInfo);
   const { data, isLoading, isError } = useGetUserProfileQuery();
+  const [userData, setUserData] = useState(userInfo);
 
   if (isLoading) {
     return (
@@ -29,7 +32,10 @@ const UserProfile = () => {
     return <div>Error loading profile information.</div>;
   }
 
-  dispatch(setUserInfo(data.data));
+  if (!userInfo) {
+    dispatch(setUserInfo(data.data));
+    setUserData(data.data);
+  }
 
   return (
     <RootLayout>
@@ -40,9 +46,9 @@ const UserProfile = () => {
       >
         <Card title="User Profile">
           <Descriptions layout="vertical">
-            <Descriptions.Item label="Name">{data.data.name}</Descriptions.Item>
+            <Descriptions.Item label="Name">{userData.name}</Descriptions.Item>
             <Descriptions.Item label="Email">
-              {data.data.email}
+              {userData.email}
             </Descriptions.Item>
             {/* Add more profile fields as needed */}
           </Descriptions>

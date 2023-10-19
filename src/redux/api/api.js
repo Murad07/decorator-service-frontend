@@ -41,9 +41,9 @@ export const apiSlice = createApi({
       query: () => "/profile",
     }),
     updateUser: builder.mutation({
-      query: ({ userId, ...updateData }) => ({
-        url: `users/6527b90a7bcba07dd47ab553`, // Include the user's ID in the URL
-        method: "PATCH", // You may need to change this to the appropriate HTTP method
+      query: (updateData) => ({
+        url: `users/${updateData._id}`,
+        method: "PATCH",
         body: updateData,
       }),
     }),
