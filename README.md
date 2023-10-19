@@ -2,6 +2,8 @@ This is a Next Js Decorator Service Project.
 
 ## Live site: https://l2a6-pc-builder-murad07.vercel.app/
 
+## Video Link: https://www.loom.com/share/b9ac095a88ab41b79395cd2c24f3758c
+
 ## Features
 
 - Home, Hero Banner, Navbar and Footer.
