@@ -4,7 +4,7 @@ import {
   removeFromCart,
   selectCartItems,
 } from "@/redux/features/cartSlice";
-import { Card, Rate, Image } from "antd";
+import { Card, Rate, Image, Button } from "antd";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 const { Meta } = Card;
@@ -42,15 +42,14 @@ const ProductCard = ({
 
   return (
     <>
-      <Link href={`/products/${id}`}>
-        <Card
-          hoverable
-          style={{
-            padding: 10,
-            height: 400,
-          }}
-          // cover={<Image src={serviceImage} alt={title} height={300} />}
-        >
+      <Card
+        hoverable
+        style={{
+          padding: 10,
+          height: 400,
+        }}
+      >
+        <Link href={`/products/${id}`}>
           <div style={imageStyle}>
             <Image
               alt={title}
@@ -59,13 +58,13 @@ const ProductCard = ({
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
           </div>
+
           <Meta title={title} description="" />
-          <p>Category: {category}</p>
-          <p>Price: {price}</p>
-          {/* Rating: <Rate disabled defaultValue={rating} /> */}
-        </Card>
-      </Link>
-      <button onClick={addServiceToCart}>Add to Cart</button>
+        </Link>
+        <p>Category: {category}</p>
+        <p>Price: {price}</p>
+        <Button onClick={addServiceToCart}>Add to Cart</Button>
+      </Card>
     </>
   );
 };
