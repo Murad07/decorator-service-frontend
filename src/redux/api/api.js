@@ -23,6 +23,12 @@ export const apiSlice = createApi({
     getUpcomingServices: builder.query({
       query: () => "/service?serviceStatus=Upcoming",
     }),
+    getSingleService: builder.query({
+      query: (serviceId) => `/service/${serviceId}`,
+    }),
+    getReview: builder.query({
+      query: (serviceId) => `/reviews/${serviceId}`,
+    }),
     login: builder.mutation({
       query: (credentials) => ({
         url: "/auth/login",
@@ -53,6 +59,8 @@ export const apiSlice = createApi({
 export const {
   useGetAvailableServicesQuery,
   useGetUpcomingServicesQuery,
+  useGetSingleServiceQuery,
+  useGetReviewQuery,
   useLoginMutation,
   useSignupMutation,
   useGetUserProfileQuery,

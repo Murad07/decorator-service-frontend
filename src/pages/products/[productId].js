@@ -1,25 +1,35 @@
-import { Card, Col, Rate, Row } from "antd";
-import Image from "next/image";
+import { Card, Col, Rate, Row, Image } from "antd";
 import RootLayout from "@/components/Layouts/RootLayout";
+import { useRouter } from "next/router";
+import { useGetReviewQuery, useGetSingleServiceQuery } from "@/redux/api/api";
 
 const ProductDetails = ({ product }) => {
-  console.log(product);
+  const router = useRouter();
+  const { productId } = router.query;
+
+  const { data, isLoading, isError } = useGetSingleServiceQuery(productId);
+  const {
+    data: review,
+    isLoading: reviewLoading,
+    isError: reviewError,
+  } = useGetReviewQuery(productId);
+  console.log("p: " + review?.data);
   return (
     <RootLayout>
       <div style={{ padding: 20 }} className="blog-card-container">
         <Row gutter={[15, 15]}>
           <Col xs={24} sm={12} span={12}>
-            <h1>{product?.name}</h1>
-            <p>Category: {product?.category}</p>
-            <p>Status: {product?.status}</p>
-            <p>Price: {product?.price}</p>
+            <h1>{data?.data?.title}</h1>
+            <p>Category: {data?.data?.category}</p>
+            <p>Status: {data?.data?.serviceStatus}</p>
+            <p>Price: {data?.data?.price}</p>
             {/* <p>Individual Rating: {product.rating.individual}</p> */}
-            Average Rating: <Rate disabled defaultValue={product?.rating} />
+            {/* Average Rating: <Rate disabled defaultValue={data.data?.rating} /> */}
           </Col>
           <Col xs={24} sm={12} span={12}>
             <Image
-              src={product?.image_url}
-              alt={product?.name}
+              src={data?.data?.serviceImage}
+              alt={data?.data?.title}
               width={250}
               height={300}
             />
@@ -27,18 +37,8 @@ const ProductDetails = ({ product }) => {
         </Row>
 
         <div>
-          <h3>Description: </h3>
-          <p>{product?.description}</p>
-
-          <h3>Key Features</h3>
-          <ul>
-            {product?.key_features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-
           <h3>Reviews</h3>
-          {product?.reviews.map((review) => (
+          {review?.data?.map((review) => (
             <div
               key={review.id}
               style={{
@@ -50,7 +50,7 @@ const ProductDetails = ({ product }) => {
             >
               <h4>{review.user}</h4>
               Individual Rating: <Rate disabled defaultValue={review?.rating} />
-              <p>Comment: {review?.comment}</p>
+              <p>Comment: {review?.reviewText}</p>
             </div>
           ))}
         </div>
